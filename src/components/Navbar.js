@@ -105,12 +105,22 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item> */}
 
-            <Nav.Item className="fork-btn">
+            {/* <Nav.Item className="fork-btn">
               <Button
                 target="_blank"
                 className="d-flex justify-content-between align-items-center gap-2 fork-btn-inner">
                 <FaLock />
                 Login
+              </Button>
+            </Nav.Item> */}
+            <Nav.Item className="fork-btn">
+              <Button
+                href="https://github.com/Tin542"
+                target="_blank"
+                className="fork-btn-inner"
+              >
+                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
+                <AiFillStar style={{ fontSize: "1.1em" }} />
               </Button>
             </Nav.Item>
           </Nav>
