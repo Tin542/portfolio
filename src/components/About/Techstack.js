@@ -1,70 +1,103 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
-import { CgCPlusPlus } from "react-icons/cg";
+import { Col, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import {
   DiJavascript1,
   DiReact,
   DiNodejs,
   DiMongodb,
-  DiPython,
-  DiGit,
   DiJava,
+  DiMaterializecss,
 } from "react-icons/di";
 import {
-  SiRedis,
-  SiFirebase,
+  SiMicrosoftsqlserver,
   SiNextdotjs,
-  SiSolidity,
+  SiNestjs,
   SiPostgresql,
+  SiTypescript,
+  SiExpress,
+  SiAntdesign,
+  SiMicrosoftazure,
+  SiTailwindcss 
 } from "react-icons/si";
-import { TbBrandGolang } from "react-icons/tb";
+import { GrGraphQl } from "react-icons/gr";
+import { FaHtml5, FaCss3Alt, FaBootstrap, FaGithub, FaGitlab } from "react-icons/fa";
 
 function Techstack() {
+  const categories = [
+    {
+      title: "Programming Language",
+      tools: [
+        { icon: <DiJavascript1 />, name: "JavaScript" },
+        { icon: <SiTypescript />, name: "TypeScript" },
+        { icon: <DiJava />, name: "Java" },
+      ],
+    },
+    {
+      title: "Back-end",
+      tools: [
+        { icon: <DiNodejs />, name: "Node.js" },
+        { icon: <SiNestjs />, name: "NestJS" },
+        { icon: <SiExpress />, name: "Express.js" },
+        { icon: <GrGraphQl />, name: "GraphQL" },
+      ],
+    },
+    {
+      title: "Front-end",
+      tools: [
+        { icon: <DiReact />, name: "React" },
+        { icon: <SiNextdotjs />, name: "Next.js" },
+        { icon: <FaHtml5 />, name: "HTML5" },
+        { icon: <FaCss3Alt />, name: "CSS3" },
+        { icon: <SiAntdesign />, name: "Ant Design" },
+        { icon: <FaBootstrap />, name: "Bootstrap" },
+        { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+        { icon: <DiMaterializecss />, name: "Materialize CSS" },
+      ],
+    },
+    {
+      title: "Database",
+      tools: [
+        { icon: <SiMicrosoftsqlserver />, name: "Microsoft SQL Server" },
+        { icon: <SiPostgresql />, name: "PostgreSQL" },
+        { icon: <DiMongodb />, name: "MongoDB" },
+      ],
+    },
+    {
+      title: "Source Management",
+      tools: [
+        { icon: <FaGithub />, name: "GitHub" },
+        { icon: <FaGitlab />, name: "GitLab" },
+        { icon: <SiMicrosoftazure />, name: "Azure DevOps Repo" },
+      ],
+    },
+  ];
+
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
-        <CgCPlusPlus />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiJavascript1 />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <TbBrandGolang />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiNodejs />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiReact />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiSolidity />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiMongodb />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiNextdotjs />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiGit />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiFirebase />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiRedis />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiPostgresql />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiPython />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiJava />
-      </Col>
-    </Row>
+    <section>
+      {categories.map((category, index) => (
+        <div key={index} style={{ paddingBottom: "50px" }}>
+          <Row>
+            <strong className="tech-title">{category.title}</strong>
+          </Row>
+          <Row style={{ justifyContent: "start" }}>
+            {category.tools.map((tool, toolIndex) => (
+              <Col xs={4} md={2} className="tech-icons" key={toolIndex}>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id={`tooltip-${index}-${toolIndex}`}>
+                      {tool.name}
+                    </Tooltip>
+                  }
+                >
+                  <span>{tool.icon}</span>
+                </OverlayTrigger>
+              </Col>
+            ))}
+          </Row>
+        </div>
+      ))}
+    </section>
   );
 }
 
