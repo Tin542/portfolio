@@ -26,7 +26,7 @@ export const ProjectsData = [
     title: "Portfolio",
     description:
       `A personal portfolio website to showcase my projects, skills, and experience as a Full-stack Developer. Designed a clean and responsive user interface with smooth navigation and animations for a great user experience.`,
-    ghLink: "https://github.com/Tin542/porfolio",
+    ghLink: "https://github.com/Tin542/portfolio",
     demoLink: "https://nguyenthanhtin.online/",
     isBlog: false,
   },
