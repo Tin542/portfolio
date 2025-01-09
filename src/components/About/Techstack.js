@@ -77,9 +77,9 @@ function Techstack() {
       {categories.map((category, index) => (
         <div key={index} style={{ paddingBottom: "50px" }}>
           <Row>
-            <strong className="tech-title">{category.title}</strong>
+            <strong style={{fontSize: '25px'}}>{category.title}</strong>
           </Row>
-          <Row style={{ justifyContent: "start" }}>
+          <Row style={{ justifyContent: "center" }}>
             {category.tools.map((tool, toolIndex) => (
               <Col xs={4} md={2} className="tech-icons" key={toolIndex}>
                 <OverlayTrigger
