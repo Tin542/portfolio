@@ -8,8 +8,8 @@ export const ProjectsData = [
     title: "TinBot",
     description:
       `A chatbot application that provides automated responses to user queries, offering support and interaction across multiple platforms`,
-    ghLink: "https://github.com/Tin542/chatbot",
-    demoLink: "https://tinbot.vercel.app/",
+    ghLink: "https://github.com/Tin542/my-chatbot",
+    demoLink: "https://my-chatbot-woad.vercel.app/",
     isBlog: false,
   },
   {
